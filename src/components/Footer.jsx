@@ -1,6 +1,3 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-
 const Footer = () => {
   const navItems = ['HOME', 'CLUBS', 'EVENTS', 'CONNECT'];
 
@@ -14,9 +11,9 @@ const Footer = () => {
         {/* Column 1: About Tech Fest */}
         <div className="flex flex-col items-start">
           <div className="flex items-center gap-3 mb-6">
-            <img src='/WebAssets/logo.png' className="w-10 h-10 bg-[#e99b63] rounded-lg flex items-center justify-center font-bold text-black text-xl" alt='logo'>
+            <img src='/WebAssets/logo.png' className="w-10 h-10 bg-[#e99b63] rounded-lg flex items-center justify-center font-bold text-black text-xl" alt='logo'/>
               
-            </img>
+           
             <span className="text-2xl font-bold tracking-tighter uppercase">Tech Fest<span className="text-[#e99b63]"> 2026</span></span>
           </div>
           <p className="text-gray-400 text-sm leading-relaxed mb-6 text-left">
@@ -99,7 +96,7 @@ const Footer = () => {
             <p className="text-sm font-black group-hover:text-[#e99b63] transition-colors">ALFA CODING CLUB</p>
           </div>
           <div className="w-12 h-12 rounded-full border border-white/10 bg-white/5 flex items-center justify-center transition-all duration-500 group-hover:border-[#e99b63]/50 group-hover:shadow-[0_0_15px_rgba(233,155,99,0.2)]">
-            <img src='/WebAssets/WhatsApp Image 2025-12-28 at 9.03.33 PM.jpeg' className="text-[#e99b63] font-black text-xl" alt='logo'></img>
+            <img src='/WebAssets/WhatsApp Image 2025-12-28 at 9.03.33 PM.jpeg' className="text-[#e99b63] font-black text-xl" alt='logo'/>
           </div>
         </div>
       </div>

@@ -139,7 +139,7 @@ const Events = () => {
           whileInView={{ opacity: 1, y: 0 }} 
           className='relative px-6 py-2 bg-white/5 border border-white/10 rounded-full mb-8'
         >
-          <span className='text-[12px] tracking-[0.4em] font-bold text-[#e99b63] uppercase'>Teach Fest 2026</span>
+          <span className='text-[12px] tracking-[0.4em] font-bold text-white uppercase'>Teach Fest 2026</span>
         </motion.div>
         
         <motion.h2 
