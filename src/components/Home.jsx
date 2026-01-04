@@ -45,7 +45,7 @@ const Home = () => {
     <main className="flex flex-col items-center justify-center min-h-[calc(90vh-6rem)] text-center px-6 pt-16 overflow-x-hidden">
 
       {/* Hero Section */}
-      <motion.div
+      <motion.div id='/'
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -140,9 +140,9 @@ const Home = () => {
 
       {/* Sections Grid */}
       <div className="w-full space-y-32 mt-32">
-        <Events />
-        <Clubs />
-        <Connect />
+        <Events id='events' />
+        <Clubs id='clubs' />
+        <Connect id='connect' />
       </div>
 
       {/* Modal Section */}

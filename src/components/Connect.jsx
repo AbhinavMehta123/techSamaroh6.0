@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Instagram, Camera, Zap, ArrowRight, Fingerprint, Share2 } from 'lucide-react';
 
-const Connect = () => {
+const Connect = ({id}) => {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -14,7 +14,7 @@ const Connect = () => {
   const y2 = useTransform(scrollYProgress, [0, 1], [-40, 40]);
 
   return (
-    <section ref={containerRef} className="py-24 px-6 w-full max-w-7xl mx-auto">
+    <section id={id} ref={containerRef} className="py-24 px-6 w-full max-w-7xl mx-auto">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         
         {/* LEFT SIDE: THE SYNC STATEMENT */}

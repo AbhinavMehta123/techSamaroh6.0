@@ -1,13 +1,10 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 // Components
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
-import Clubs from "./components/Clubs";
-import Connect from "./components/Connect";
-import Events from "./components/Events";
 
 // Pages - Clubs
 import Alfa from "./pages/clubs/Alfa";
@@ -27,10 +24,11 @@ import Apex1 from "./pages/events/Apex1";
 import Apex2 from "./pages/events/Apex2";
 import ABC1 from "./pages/events/ABC1";
 import ABC2 from "./pages/events/ABC2";
+import { Club } from "lucide-react";
 
 const App = () => {
   return (
-    <main>
+    <main className="overflow-x-hidden text-white">
       {/* Gradient image */}
       <img
         className="absolute top-0 right-0 opacity-60 -z-10"
@@ -44,17 +42,13 @@ const App = () => {
         right-[-5%] shadow-[0_0_900px_20px_#e99b63] -rotate-[30deg]
         -z-10"
       ></div>
-      
-
 
       <Navbar />
 
-      {/* Components */}
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/clubs" element={<Clubs />} />
-        <Route path="/events" element={<Events />} />
-        <Route path="/connect" element={<Connect />} />
+         <Route path="/clubs" element={<Club />} />
+
 
         {/* Clubs */}
         <Route path="/alfa" element={<Alfa />} />
@@ -75,7 +69,6 @@ const App = () => {
         <Route path="/abc1" element={<ABC1 />} />
         <Route path="/abc2" element={<ABC2 />} />
       </Routes>
-
 
       <Footer />
     </main>

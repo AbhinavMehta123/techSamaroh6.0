@@ -1,7 +1,8 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
-const Events = () => {
+const Events = ({id}) => {
   const containerRef = useRef(null);
   
   const { scrollYProgress } = useScroll({
@@ -23,6 +24,7 @@ const Events = () => {
     prize: "₹20,000",
     icon: "bx-code-alt",
     color: "from-blue-500",
+    link: "/alfa1"
   },
   {
     id: 2,
@@ -34,6 +36,7 @@ const Events = () => {
     prize: "₹35,000",
     icon: "bx-bot",
     color: "from-red-500",
+    link: "/alfa2"
   },
   {
     id: 3,
@@ -45,6 +48,7 @@ const Events = () => {
     prize: "₹15,000",
     icon: "bx-palette",
     color: "from-purple-500",
+    link: "/ck1"
   },
   {
     id: 4,
@@ -56,6 +60,7 @@ const Events = () => {
     prize: "₹25,000",
     icon: "bx-shield-quarter",
     color: "from-green-500",
+    link: "/ck2"
   },
   {
     id: 5,
@@ -67,6 +72,7 @@ const Events = () => {
     prize: "Certificates",
     icon: "bx-brain",
     color: "from-yellow-500",
+    link: "/abc1"
   },
   {
     id: 6,
@@ -78,6 +84,7 @@ const Events = () => {
     prize: "₹50,000",
     icon: "bx-game",
     color: "from-pink-500",
+    link: "/abc2"
   },
   {
     id: 7,
@@ -89,6 +96,7 @@ const Events = () => {
     prize: "Funding",
     icon: "bx-rocket",
     color: "from-orange-500",
+    link: "/fs1"
   },
   {
     id: 8,
@@ -100,6 +108,7 @@ const Events = () => {
     prize: "₹10,000",
     icon: "bx-bar-chart-alt",
     color: "from-teal-500",
+    link: "/fs2"
   },
   {
     id: 9,
@@ -111,6 +120,7 @@ const Events = () => {
     prize: "NFT Drops",
     icon: "bx-link-external",
     color: "from-indigo-500",
+    link: "/apex1"
   },
   {
     id: 10,
@@ -122,12 +132,13 @@ const Events = () => {
     prize: "Grand Trophy",
     icon: "bx-party",
     color: "from-rose-500",
+    link: "/apex2"
   },
 ];
 
 
   return (
-    <motion.section 
+    <motion.section id={id} 
       ref={containerRef}
       style={{ opacity, scale }}
       className="py-24 px-6 w-full max-w-7xl mx-auto text-center text-white"
@@ -214,12 +225,13 @@ const Events = () => {
                   <span className="text-xs font-bold text-gray-200">Prize Pool: {event.prize}</span>
                 </div>
               </div>
-
+              <Link to={event.link}>
               <motion.button
                 className="absolute bottom-0 left-0 w-full py-4 bg-[#e99b63] text-black font-bold text-xs tracking-widest translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"
               >
-                VIEW FULL DETAILS
+                VIEW EVENT DETAILS
               </motion.button>
+              </Link>
             </div>
           </motion.div>
         ))}

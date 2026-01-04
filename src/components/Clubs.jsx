@@ -1,7 +1,8 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
-const Clubs = () => {
+const clubs = ({id}) => {
   const containerRef = useRef(null);
   
   const { scrollYProgress } = useScroll({
@@ -18,40 +19,45 @@ const Clubs = () => {
       name: "The Coding Society", 
       desc: "A community of developers dedicated to mastering algorithms, competitive programming, and open-source contribution.",
       icon: "bx-terminal", 
-      color: "from-blue-600" 
+      color: "from-blue-600",
+      link: "/alfa"
     },
     { 
       id: 2, 
       name: "Robotics Collective", 
       desc: "Where engineering meets imagination. We design, build, and program autonomous machines to solve real-world problems.",
       icon: "bx-cog", 
-      color: "from-red-600" 
+      color: "from-red-600",
+      link: "/apex"
     },
     { 
       id: 3, 
       name: "AI & Data Guild", 
       desc: "Exploring the frontiers of Machine Learning and Big Data. Our members build predictive models and dive deep into neural networks.",
       icon: "bx-brain", 
-      color: "from-purple-600" 
+      color: "from-purple-600",
+      link: "/abc"
     },
     { 
       id: 4, 
       name: "Pixel Perfect Design", 
       desc: "Bridging the gap between aesthetics and functionality. We focus on UI/UX research and creating seamless digital experiences.",
       icon: "bx-shape-polygon", 
-      color: "from-pink-600" 
+      color: "from-pink-600" ,
+      link: "/fs"
     },
     { 
       id: 5, 
       name: "Cyber Security Hub", 
       desc: "The guardians of the digital realm. We train in ethical hacking and cryptography to secure the future of the internet.",
       icon: "bx-lock-alt", 
-      color: "from-cyan-600" 
+      color: "from-cyan-600",
+      link: "/ck"
     }
   ];
 
   return (
-    <motion.section 
+    <motion.section id={id} 
       ref={containerRef}
       style={{ opacity, scale }}
       className="py-24 px-6 w-full max-w-7xl mx-auto text-center text-white"
@@ -124,11 +130,14 @@ const Clubs = () => {
               </p>
 
               {/* Slide-Up Button */}
+              <Link to={club.link}>
               <motion.button
+             
                 className="absolute bottom-0 left-0 w-full py-4 bg-[#e99b63] text-black font-bold text-xs tracking-widest translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"
               >
-                JOIN THE COMMUNITY
+                EXPLORE THE COMMUNITY
               </motion.button>
+              </Link>
             </div>
           </motion.div>
         ))}
@@ -137,4 +146,4 @@ const Clubs = () => {
   );
 };
 
-export default Clubs;
+export default clubs;

@@ -9,13 +9,22 @@ import {
   Trophy,
   Calendar,
   ChevronRight,
-  Users
+  Users,
+  Camera
 } from 'lucide-react';
 
-const ClubPage = () => {
+const Alfa = () => {
   const navigate = useNavigate();
 
-  // TEAM MEMBERS ARRAY - Modify this for future updates
+  // GALLERY ARRAY - Add your event or club photos here
+  const galleryImages = [
+    { url: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1000", alt: "Workshop" },
+    { url: "https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=1000", alt: "Hackathon" },
+    { url: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1000", alt: "Team Meeting" },
+    { url: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1000", alt: "Conference" }
+  ];
+
+  // TEAM MEMBERS ARRAY
   const teamMembers = [
     {
       name: "Aryan Sharma",
@@ -64,15 +73,14 @@ const ClubPage = () => {
       <div className="container mx-auto px-6 mb-20">
         <div className="w-full bg-[#0a0a0a] border border-white/5 rounded-[40px] p-8 md:p-12">
           <div className="flex flex-col md:flex-row items-center gap-8">
-            <div className="w-32 h-32 rounded-3xl bg-[#111] border border-white/10 flex items-center justify-center text-3xl font-black italic tracking-tighter">
-              TIC
-            </div>
+            <img src='/WebAssets/WhatsApp Image 2025-12-28 at 9.03.33 PM.jpeg' className="w-32 h-32 rounded-3xl bg-[#111] border border-white/10 flex items-center justify-center text-3xl font-black italic tracking-tighter" alt='logo'/>
+            
             <div className="text-center md:text-left">
               <span className="text-[10px] font-bold tracking-[0.4em] text-indigo-400 uppercase mb-2 block">
-                OFFICIAL STUDENT CHAPTER
+                Create Code Conqure
               </span>
               <h1 className="text-4xl md:text-7xl font-black italic tracking-tighter uppercase leading-none">
-                TECH INNOVATORS CLUB
+                ALFA CODING CLUB
               </h1>
             </div>
           </div>
@@ -111,7 +119,22 @@ const ClubPage = () => {
               </div>
             </ClubSection>
 
-            {/* TEAM SECTION ADDED HERE */}
+            {/* GALLERY SECTION */}
+            <ClubSection title="Gallery" icon={<Camera className="w-5 h-5" />}>
+              <div className="grid grid-cols-2 gap-4">
+                {galleryImages.map((img, i) => (
+                  <div key={i} className="relative aspect-video rounded-[24px] overflow-hidden border border-white/5 group">
+                    <img 
+                      src={img.url} 
+                      alt={img.alt} 
+                      className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                    />
+                  </div>
+                ))}
+              </div>
+            </ClubSection>
+
+            {/* TEAM SECTION */}
             <ClubSection title="Our Team" icon={<Users className="w-5 h-5" />}>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
                 {teamMembers.map((member, i) => (
@@ -133,9 +156,8 @@ const ClubPage = () => {
             </ClubSection>
           </div>
 
-          {/* RIGHT SIDEBAR */}
+          {/* RIGHT SIDEBAR (Kept same as before) */}
           <div className="lg:col-span-4 space-y-4">
-            {/* EVENT BOX */}
             <div className="bg-[#0a0a0a] border border-white/5 rounded-[45px] p-10 flex flex-col items-center shadow-2xl">
               <h3 className="text-[10px] font-bold text-gray-500 tracking-[0.5em] uppercase mb-10">
                 Upcoming Events
@@ -168,7 +190,6 @@ const ClubPage = () => {
               </div>
             </div>
 
-            {/* SOCIALS BOX */}
             <div className="bg-[#0a0a0a] border border-white/5 rounded-[30px] p-6 flex items-center justify-between">
               <div className="flex-1 flex flex-col items-center group cursor-pointer" onClick={() => window.open('https://instagram.com', '_blank')}>
                 <Instagram className="w-5 h-5 text-gray-600 group-hover:text-white transition-colors mb-2" />
@@ -180,7 +201,6 @@ const ClubPage = () => {
                 <span className="text-[8px] font-bold text-gray-700 uppercase tracking-widest">Linked</span>
               </div>
             </div>
-
             <p className="text-center text-[8px] text-gray-700 font-bold uppercase tracking-[0.3em] pt-4">
               Established 2024 • Guided by Excellence
             </p>
@@ -191,4 +211,4 @@ const ClubPage = () => {
   );
 };
 
-export default ClubPage;
+export default Alfa;
