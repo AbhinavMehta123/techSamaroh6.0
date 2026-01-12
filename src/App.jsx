@@ -29,38 +29,41 @@ import { Club } from "lucide-react";
 const App = () => {
   return (
     <main className="overflow-x-hidden text-white">
-      {/* Gradient image */}
-      <img
-        className="absolute top-0 right-0 opacity-60 -z-10"
-        src="/gradients/gradient (2).png"
-        alt="Gradient-image"
-      />
+      <div className="w-full h-screen absolute top-0 left-0 overflow-x-hidden">
+        {/* Gradient image */}
+        <img
+          className="absolute top-0 right-0 opacity-60 -z-10"
+          src="/gradients/gradient (2).png"
+          alt="Gradient-image"
+        />
 
-      {/* Blur effect */}
-      <div
-        className="h-0 w-[40rem] absolute top-[20%]
+        {/* Blur effect */}
+        <div
+          className="h-0 w-[40rem] absolute top-[20%]
         right-[-5%] shadow-[0_0_900px_20px_#e99b63] -rotate-[30deg]
         -z-10"
-      ></div>
-      <img
-        className="absolute top-0 left-0 opacity-60 -z-10"
-        src="/gradients/gradient (2).png"
-        alt="Gradient-image"
-      />
+        ></div>
+      </div>
 
-      {/* Blur effect */}
-      <div
-        className="h-0 w-[40rem] absolute top-[20%]
+      <div className="w-full h-screen absolute top-0 left-0 overflow-x-hidden">
+        <img
+          className="absolute top-0 left-0 opacity-60 -z-10"
+          src="/gradients/gradient (2).png"
+          alt="Gradient-image"
+        />
+
+        {/* Blur effect */}
+        <div
+          className="h-0 w-[40rem] absolute top-[20%]
         left-[-5%] shadow-[0_0_900px_20px_#e99b63] -rotate-[30deg]
         -z-10"
-      ></div>
-
+        ></div>
+      </div>
       <Navbar />
 
       <Routes>
         <Route path="/" element={<Home />} />
-         <Route path="/clubs" element={<Club />} />
-
+        <Route path="/clubs" element={<Club />} />
 
         {/* Clubs */}
         <Route path="/alfa" element={<Alfa />} />
